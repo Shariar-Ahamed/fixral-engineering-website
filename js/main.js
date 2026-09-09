@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguageSwitcher();
   initQuoteModal();
   initSmoothScroll();
+  initMobileMenu();
 });
 
 /* --------------------------------------------------------------------------
@@ -141,17 +142,24 @@ const translations = {
 };
 
 function initLanguageSwitcher() {
-  const langBtn = document.getElementById('langSwitchBtn');
-  const langDisplay = document.getElementById('currentLang');
-  if (!langBtn || !langDisplay) return;
+  const desktopBtn = document.getElementById('langSwitchBtn');
+  const mobileBtn = document.getElementById('mobileLangBtn');
+  const desktopDisplay = document.getElementById('currentLang');
+  const mobileDisplay = document.getElementById('mobileCurrentLang');
 
   let currentLang = 'en';
 
-  langBtn.addEventListener('click', () => {
+  const toggleLanguage = (e) => {
+    if (e) e.stopPropagation();
     currentLang = currentLang === 'en' ? 'tr' : 'en';
-    langDisplay.textContent = currentLang.toUpperCase();
+    const upper = currentLang.toUpperCase();
+    if (desktopDisplay) desktopDisplay.textContent = upper;
+    if (mobileDisplay) mobileDisplay.textContent = upper;
     applyLanguage(currentLang);
-  });
+  };
+
+  if (desktopBtn) desktopBtn.addEventListener('click', toggleLanguage);
+  if (mobileBtn) mobileBtn.addEventListener('click', toggleLanguage);
 }
 
 function applyLanguage(lang) {
@@ -241,5 +249,35 @@ function initSmoothScroll() {
         });
       }
     });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   5. Mobile Navigation Menu Toggle
+   -------------------------------------------------------------------------- */
+function initMobileMenu() {
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const header = document.querySelector('.site-header');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  if (!menuBtn || !header) return;
+
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    header.classList.toggle('nav-open');
+  });
+
+  // Close menu when clicking any navigation link
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      header.classList.remove('nav-open');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) {
+      header.classList.remove('nav-open');
+    }
   });
 }

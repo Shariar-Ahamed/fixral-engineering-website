@@ -27,6 +27,19 @@
           <li><a href="#news" class="nav-link" data-i18n="nav_news">News</a></li>
           <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
           <li><a href="#videos" class="nav-link" data-i18n="nav_videos">Videos</a></li>
+          <li class="mobile-lang-wrapper">
+            <button class="mobile-lang-btn" id="mobileLangBtn" type="button" aria-label="Switch Language">
+              <span class="mobile-lang-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span>Language / Dil</span>
+              </span>
+              <span class="mobile-lang-badge"><span id="mobileCurrentLang">EN</span> ⇄ TR</span>
+            </button>
+          </li>
         </ul>
       </nav>
 
@@ -65,6 +78,13 @@
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </a>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" title="Menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
       </div>
     </div>
   </header>
@@ -643,17 +663,15 @@
        ======================================================================== -->
   <section class="cta-section">
     <div class="container">
-      <div class="cta-banner-card">
-        <div class="cta-banner-content">
-          <h2 class="cta-title" data-i18n="cta_title">Let's Bring Your Project to Life</h2>
-          <p class="cta-desc" data-i18n="cta_desc">
-            Prepare your ideas and component requirements flawlessly for production with Fixral's micron-level precision scanning, reverse engineering, and advanced digital modeling capabilities.
-          </p>
-          <a href="#quote" class="btn-primary trigger-quote-modal">
-            <span data-i18n="cta_btn">Get a Quote & Start</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
-        </div>
+      <div class="cta-banner-content">
+        <h2 class="cta-title" data-i18n="cta_title">Let's Bring Your Project to Life</h2>
+        <p class="cta-desc" data-i18n="cta_desc">
+          Prepare your ideas and component requirements flawlessly for production with Fixral's micron-level precision scanning, reverse engineering, and advanced digital modeling capabilities.
+        </p>
+        <a href="#quote" class="btn-primary trigger-quote-modal">
+          <span data-i18n="cta_btn">Get a Quote & Start</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
       </div>
     </div>
   </section>
