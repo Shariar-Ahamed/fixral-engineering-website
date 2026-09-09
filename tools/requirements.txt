@@ -1,0 +1,3 @@
+# Fixral Engineering - Tools Dependencies
+pymupdf>=1.23.0
+Pillow>=10.0.0
