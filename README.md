@@ -3,7 +3,7 @@
 > **Limitless Precision in Industrial Engineering, 3D Scanning & Prototyping.**  
 > Official web platform for Fixral Engineering Studio, converting physical parts into high-precision digital models and rapid manufacturing solutions.
 
-🔗 **Live Website:** [https://shariar-ahamed.github.io/fixral-engineering-website/](https://shariar-ahamed.github.io/fixral-engineering-website/)
+🔗 **Live Website:** [https://shariar-ahamed.github.io/fixral-engineering/](https://shariar-ahamed.github.io/fixral-engineering/)
 
 ---
 
@@ -12,7 +12,7 @@
 The project is structured according to industry standards for high-performance, maintainable web applications:
 
 ```text
-fixral-engineering-website/
+fixral-engineering/
 │
 ├── assets/                       # Production web assets
 │   └── images/                   # Optimized images, vectors, and brand logo
@@ -30,7 +30,7 @@ fixral-engineering-website/
 │   └── style.css                 # Comprehensive design system (tokens, components, responsive layout)
 │
 ├── js/                           # Client-side JavaScript
-│   └── main.js                   # Interactive logic: HUD coordinate simulation, EN/TR i18n, modals
+│   └── main.js                   # Interactive logic: HUD coordinate simulation, EN/TR i18n, modals, mobile menu
 │
 ├── design/                       # Raw design sources & design handoff assets
 │   ├── desktop/                  # Desktop layout specifications
@@ -38,8 +38,12 @@ fixral-engineering-website/
 │   │       ├── export-10-layers/ # SVG layer exports for each section
 │   │       └── single-components/# Master reference render (page_01.png)
 │   ├── main-file-fig/            # Master Figma project file (.fig)
-│   ├── tablet/                   # Tablet responsive design specs
-│   └── phone/                    # Mobile responsive design specs
+│   ├── tablet/                   # Tablet responsive design specs (768px layout)
+│   │   ├── page_01.png           # Master reference render
+│   │   └── home-page/            # Layer exports
+│   └── phone/                    # Mobile responsive design specs (390px layout)
+│       ├── page_01.png           # Master reference render
+│       └── home-page/            # Layer exports
 │
 ├── tools/                        # Engineering & workflow utilities
 │   ├── pdf_converter.py          # PyMuPDF-based PDF to 300 DPI image converter
@@ -48,7 +52,7 @@ fixral-engineering-website/
 │
 ├── convert_pdf.bat               # Windows drag-and-drop batch script for PDF conversion
 ├── index.html                    # Main production entrypoint (Semantic HTML5, clean SVG icons)
-├── .gitignore                    # Standard Git exclusions for OS, IDEs, and caches
+├── .gitignore                    # Standard Git exclusions for OS, IDEs, caches, and scratch files
 └── README.md                     # Project overview and technical documentation
 ```
 
@@ -103,6 +107,10 @@ npx serve .
    Seamless bilingual switching between English (EN - default) and Turkish (TR).
 6. **Request Quote Modal:**
    Accessible modal dialog for client RFQ inquiries.
+7. **Pixel-Perfect Responsive Architecture:**
+   Multi-tier responsive layouts specifically crafted for Desktop (1440px), Tablet (768px), and Mobile (390px) matching official Figma design frames.
+8. **Mobile Navigation Drawer & Full-Bleed CTA:**
+   Smooth animated hamburger-to-cross toggle with built-in language switcher and edge-to-edge full-bleed call-to-action banner.
 
 ---
 
