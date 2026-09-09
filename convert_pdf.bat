@@ -6,6 +6,14 @@ echo   Fixral Engineering - PDF to PNG/Image Converter
 echo ========================================================
 echo.
 
+python -c "import pymupdf" 2>nul
+if %errorlevel% neq 0 (
+    echo [Setup] Required library PyMuPDF not found.
+    echo Installing dependencies (pymupdf, pillow)...
+    pip install pymupdf pillow
+    echo.
+)
+
 if "%~1"=="" (
     echo Drag and drop a PDF file onto this .bat file,
     echo or enter the path below:

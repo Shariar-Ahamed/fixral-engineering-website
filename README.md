@@ -108,7 +108,20 @@ npx serve .
 
 ## 🛠️ Tooling & Utilities
 
-For details on converting design PDFs and working with vector assets, refer to the [Tools Documentation](tools/README.md).
+The project includes an automated desktop utility to convert multi-page PDF design files into crisp, 300 DPI high-resolution PNG images.
+
+### Quick Setup:
+Before using the converter tool on any PC or laptop, ensure Python is installed, then install the required libraries:
+
+```bash
+pip install pymupdf pillow
+# or
+pip install -r tools/requirements.txt
+```
+
+### Usage:
+- **Windows Drag & Drop:** Drag and drop any `.pdf` file directly onto `convert_pdf.bat` located in the root directory.
+- **CLI Commands & Advanced Options:** For custom DPI, formats (PNG/JPEG/WEBP), or CLI usage, refer to the [Tools Documentation](tools/README.md).
 
 ---
 
