@@ -10,7 +10,11 @@ A high-performance Python script powered by `PyMuPDF` to convert multi-page PDF 
 
 ### Installation
 
+Install the required dependencies directly or via `requirements.txt`:
+
 ```bash
+pip install pymupdf pillow
+# or
 pip install -r requirements.txt
 ```
 
@@ -26,4 +30,4 @@ python pdf_converter.py "path/to/design.pdf" --dpi 400 --format png --output "ou
 ```
 
 **Windows Drag & Drop:**
-You can also use the `convert_pdf.bat` file in the root directory by simply dragging and dropping any PDF file directly onto it.
+You can also use the `convert_pdf.bat` file in the root directory by simply dragging and dropping any PDF file directly onto it (it includes an automatic dependency installer if libraries are not yet installed).
