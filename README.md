@@ -3,8 +3,7 @@
 > **Limitless Precision in Industrial Engineering, 3D Scanning & Prototyping.**  
 > Official web platform for Fixral Engineering Studio, converting physical parts into high-precision digital models and rapid manufacturing solutions.
 
-🔗 **Live Website:** [https://shariar-ahamed.github.io/fixral-engineering-website/](https://shariar-ahamed.github.io/fixral-engineering-website/)  
-📁 **GitHub Repository:** [https://github.com/Shariar-Ahamed/fixral-engineering-website](https://github.com/Shariar-Ahamed/fixral-engineering-website)
+🔗 **Live Website:** [https://shariar-ahamed.github.io/fixral-engineering-website/](https://shariar-ahamed.github.io/fixral-engineering-website/)
 
 ---
 
