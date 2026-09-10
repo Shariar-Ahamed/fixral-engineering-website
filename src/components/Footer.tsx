@@ -121,7 +121,7 @@ export default function Footer({ onOpenQuote }: FooterProps) {
         <div className="footer-divider-mobile footer-divider-tablet"></div>
 
         <div className="footer-bottom-bar">
-          <div>© 2024 FIXRAL Industrial Studio. All rights reserved.</div>
+          <div>© 2026 FIXRAL Industrial Studio. All rights reserved.</div>
           <div className="footer-bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#" className="foot-terms-link">Terms of Service</a>

@@ -153,4 +153,4 @@ npm run preview
 
 ## 📄 License & Intellectual Property
 
-Copyright © 2024 FIXRAL Industrial Engineering Studio. All rights reserved.
+Copyright © 2026 FIXRAL Industrial Engineering Studio. All rights reserved.

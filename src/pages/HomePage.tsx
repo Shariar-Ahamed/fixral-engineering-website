@@ -500,7 +500,7 @@ export default function HomePage() {
                   <img src="/assets/images/rectangle.png" alt="Metal Sintering SLS in Aerospace" width="704" height="280" />
                 </div>
                 <div className="news-featured-body">
-                  <div className="news-meta">SLS TECHNOLOGIES • OCT 15, 2024</div>
+                  <div className="news-meta">SLS TECHNOLOGIES • FEB 15, 2026</div>
                   <h3 className="news-featured-title">
                     Metal Sintering (SLS) Pushing Boundaries in Aerospace Component Manufacturing
                   </h3>
@@ -522,7 +522,7 @@ export default function HomePage() {
                     <img src="/assets/images/rectangle-1.png" alt="Classic Car Reverse Engineering" width="110" height="110" />
                   </div>
                   <div className="news-mini-body">
-                    <div className="news-meta">REVERSE ENGINEERING • OCT 04, 2024</div>
+                    <div className="news-meta">REVERSE ENGINEERING • JAN 28, 2026</div>
                     <h3 className="news-mini-title">
                       Reverse Engineering Process in Classic Automobile Spare Parts
                     </h3>
@@ -539,7 +539,7 @@ export default function HomePage() {
                     <img src="/assets/images/rectangle-2.png" alt="AI Dimensional Analysis" width="110" height="110" />
                   </div>
                   <div className="news-mini-body">
-                    <div className="news-meta">SOFTWARE SOLUTIONS • SEP 22, 2024</div>
+                    <div className="news-meta">SOFTWARE SOLUTIONS • JAN 12, 2026</div>
                     <h3 className="news-mini-title">
                       AI-Powered Dimensional Analysis and Quality Control Reporting
                     </h3>
