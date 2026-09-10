@@ -20,28 +20,70 @@ export default function Footer({ onOpenQuote }: FooterProps) {
               Micron-precision engineering solutions, 3D modeling, and advanced technology prototyping leader. Accuracy beyond limits.
             </p>
             <div className="footer-social-links">
-              <a href="#" className="social-btn" aria-label="Facebook">
+              <a
+                href="https://www.shariarahamed.me"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn"
+                aria-label="Portfolio - Shariar Ahamed"
+                title="Portfolio Website"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.facebook.com/Shahriar.TheBrownCat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn"
+                aria-label="Facebook - Shariar Ahamed"
+                title="Facebook"
+              >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </a>
-              <a href="#" className="social-btn" aria-label="Instagram">
+              <a
+                href="https://www.instagram.com/shahriar_thebrowncat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn"
+                aria-label="Instagram - Shariar Ahamed"
+                title="Instagram"
+              >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                 </svg>
               </a>
-              <a href="#" className="social-btn" aria-label="LinkedIn">
+              <a
+                href="https://www.linkedin.com/in/shariarahamed/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn"
+                aria-label="LinkedIn - Shariar Ahamed"
+                title="LinkedIn"
+              >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                   <rect x="2" y="9" width="4" height="12" />
                   <circle cx="4" cy="4" r="2" />
                 </svg>
               </a>
-              <a href="#" className="social-btn" aria-label="Twitter X">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+              <a
+                href="https://x.com/ShariarAlways"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn"
+                aria-label="X (Twitter) - Shariar Ahamed"
+                title="X (Twitter)"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
             </div>
@@ -121,7 +163,18 @@ export default function Footer({ onOpenQuote }: FooterProps) {
         <div className="footer-divider-mobile footer-divider-tablet"></div>
 
         <div className="footer-bottom-bar">
-          <div>© 2026 FIXRAL Industrial Studio. All rights reserved.</div>
+          <div>
+            © 2026 FIXRAL Industrial Studio. Developed by{' '}
+            <a
+              href="https://www.shariarahamed.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'var(--color-accent-orange)', textDecoration: 'none', fontWeight: 500 }}
+            >
+              Shariar Ahamed Ripon
+            </a>
+            . All rights reserved.
+          </div>
           <div className="footer-bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#" className="foot-terms-link">Terms of Service</a>
