@@ -1053,7 +1053,7 @@ button {
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   background-color: #0E1013;
-  background-image: url('../assets/images/cta-section.png');
+  background-image: url('/assets/images/cta-section.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3096,14 +3096,21 @@ button {
     height: 16px;
     border-radius: 2px;
   }
-  .nav-links,
   .icon-action-btn,
-  .lang-switch,
-  .mobile-menu-btn {
+  .lang-switch {
     display: none !important;
   }
+  .nav-links {
+    display: none;
+  }
+  .site-header.nav-open .nav-links {
+    display: flex !important;
+  }
+  .mobile-menu-btn {
+    display: flex !important;
+  }
   .nav-actions {
-    gap: 0 !important;
+    gap: 10px !important;
     display: flex !important;
     align-items: center !important;
   }

@@ -46,3 +46,15 @@ temp/
 tmp/
 *.tmp
 scratch/
+
+# Vite & build output
+dist/
+dist-ssr/
+*.local
+node_modules/
+/.next/
+/out/
+.env*.local
+*.tsbuildinfo
+
+
