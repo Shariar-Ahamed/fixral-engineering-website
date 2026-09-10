@@ -2,6 +2,7 @@
   "name": "fixral-engineering",
   "private": true,
   "version": "0.1.0",
+  "description": "High-precision industrial engineering studio website featuring 3D optical laser scanning, reverse engineering, CAD modeling, and additive manufacturing. Built with Vite, React, TypeScript, and fully responsive across all devices.",
   "type": "module",
   "scripts": {
     "dev": "vite",
