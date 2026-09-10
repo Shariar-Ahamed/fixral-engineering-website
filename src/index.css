@@ -2696,18 +2696,6 @@ button {
     font-weight: 600 !important;
     box-shadow: none !important;
   }
-  .chip-text-desktop {
-    display: none !important;
-  }
-  .chip-text-mobile {
-    display: inline !important;
-  }
-  .chip-text-tablet {
-    display: inline !important;
-  }
-  .chip-tablet-cad {
-    display: inline-flex !important;
-  }
   .chip-hide-tablet {
     display: none !important;
   }
@@ -3239,12 +3227,6 @@ button {
     color: #FFFFFF;
     font-weight: 600;
     box-shadow: none;
-  }
-  .chip-text-desktop {
-    display: none !important;
-  }
-  .chip-text-mobile {
-    display: inline !important;
   }
   .portfolio-hud-status {
     display: none !important;

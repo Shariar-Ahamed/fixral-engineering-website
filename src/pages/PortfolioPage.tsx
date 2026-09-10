@@ -167,8 +167,7 @@ export default function PortfolioPage() {
                 aria-selected={activeFilter === 'all'}
                 type="button"
               >
-                <span className="chip-text-desktop">All</span>
-                <span className="chip-text-mobile">ALL</span>
+                All
               </button>
               <button
                 className={`filter-chip ${activeFilter === '3d-scan' ? 'active' : ''}`}
@@ -177,27 +176,16 @@ export default function PortfolioPage() {
                 aria-selected={activeFilter === '3d-scan'}
                 type="button"
               >
-                <span className="chip-text-desktop">3D Scanning</span>
-                <span className="chip-text-tablet">3D SCANNING</span>
+                3D Scanning
               </button>
               <button
-                className={`filter-chip chip-tablet-reverse ${activeFilter === 'cad' ? 'active' : ''}`}
+                className={`filter-chip ${activeFilter === 'cad' ? 'active' : ''}`}
                 onClick={() => { setActiveFilter('cad'); setCurrentPage(1); }}
                 role="tab"
                 aria-selected={activeFilter === 'cad'}
                 type="button"
               >
-                <span className="chip-text-desktop">Reverse Engineering</span>
-                <span className="chip-text-tablet">REVERSE ENGINEERING</span>
-              </button>
-              <button
-                className={`filter-chip chip-tablet-cad ${activeFilter === 'cad' ? 'active' : ''}`}
-                onClick={() => { setActiveFilter('cad'); setCurrentPage(1); }}
-                role="tab"
-                aria-selected={activeFilter === 'cad'}
-                type="button"
-              >
-                CAD DESIGN
+                Reverse Engineering
               </button>
               <button
                 className={`filter-chip ${activeFilter === '3d-print' ? 'active' : ''}`}
@@ -206,8 +194,7 @@ export default function PortfolioPage() {
                 aria-selected={activeFilter === '3d-print'}
                 type="button"
               >
-                <span className="chip-text-desktop">3D Printing</span>
-                <span className="chip-text-tablet">3D PRINTING</span>
+                3D Printing
               </button>
               <button
                 className={`filter-chip ${activeFilter === 'restoration' ? 'active' : ''}`}
@@ -216,11 +203,10 @@ export default function PortfolioPage() {
                 aria-selected={activeFilter === 'restoration'}
                 type="button"
               >
-                <span className="chip-text-desktop">Restoration</span>
-                <span className="chip-text-tablet">RESTORATION</span>
+                Restoration
               </button>
               <button
-                className={`filter-chip chip-hide-tablet ${activeFilter === 'digital' ? 'active' : ''}`}
+                className={`filter-chip ${activeFilter === 'digital' ? 'active' : ''}`}
                 onClick={() => { setActiveFilter('digital'); setCurrentPage(1); }}
                 role="tab"
                 aria-selected={activeFilter === 'digital'}
@@ -229,7 +215,7 @@ export default function PortfolioPage() {
                 Digital Solutions
               </button>
               <button
-                className={`filter-chip chip-hide-tablet ${activeFilter === 'automotive' ? 'active' : ''}`}
+                className={`filter-chip ${activeFilter === 'automotive' ? 'active' : ''}`}
                 onClick={() => { setActiveFilter('automotive'); setCurrentPage(1); }}
                 role="tab"
                 aria-selected={activeFilter === 'automotive'}
