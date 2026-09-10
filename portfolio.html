@@ -16,17 +16,18 @@
   <header class="site-header" id="top">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo" aria-label="Fixral Engineering Studio">
-        <img src="assets/images/logo.svg" alt="Fixral Studio Logo">
+        <img src="assets/images/logo.svg" alt="Fixral Studio Logo" class="logo-desktop">
+        <img src="assets/images/logo-mobile.svg" alt="Fixral Studio Logo" class="logo-mobile">
       </a>
 
       <nav aria-label="Main Navigation">
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
-          <li><a href="portfolio.html" class="nav-link active" data-i18n="nav_portfolio">Portfolio</a></li>
-          <li><a href="index.html#services" class="nav-link" data-i18n="nav_services">Services</a></li>
-          <li><a href="index.html#news" class="nav-link" data-i18n="nav_news">News</a></li>
-          <li><a href="index.html#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
-          <li><a href="index.html#videos" class="nav-link" data-i18n="nav_videos">Videos</a></li>
+          <li><a href="index.html" class="nav-link" data-i18n="nav_home">Anasayfa</a></li>
+          <li><a href="portfolio.html" class="nav-link active" data-i18n="nav_portfolio">Portfolyo</a></li>
+          <li><a href="index.html#services" class="nav-link" data-i18n="nav_services">Hizmetler</a></li>
+          <li class="nav-item-hide-tablet"><a href="index.html#news" class="nav-link" data-i18n="nav_news">Haberler</a></li>
+          <li><a href="index.html#contact" class="nav-link" data-i18n="nav_contact">İletişim</a></li>
+          <li class="nav-item-hide-tablet"><a href="index.html#videos" class="nav-link" data-i18n="nav_videos">Videolar</a></li>
           <li class="mobile-lang-wrapper">
             <button class="mobile-lang-btn" id="mobileLangBtn" type="button" aria-label="Switch Language">
               <span class="mobile-lang-left">
@@ -59,7 +60,7 @@
             <line x1="2" y1="12" x2="22" y2="12"></line>
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
           </svg>
-          <span id="currentLang" class="lang-active">EN</span>
+          <span id="currentLang" class="lang-active">TR</span>
         </button>
 
         <!-- User Profile Button -->
@@ -72,7 +73,7 @@
 
         <!-- Request Quote CTA -->
         <a href="#quote" class="btn-primary trigger-quote-modal">
-          <span data-i18n="btn_get_quote">Get Quote</span>
+          <span data-i18n="btn_get_quote">Teklif Al</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
@@ -97,16 +98,28 @@
       <div class="container">
         <!-- Breadcrumb Navigation -->
         <nav class="portfolio-breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html" data-i18n="breadcrumb_home">Home</a>
-          <span class="breadcrumb-sep">&gt;</span>
-          <span class="breadcrumb-current" data-i18n="breadcrumb_portfolio">Portfolio</span>
+          <span class="breadcrumb-desktop">
+            <a href="index.html" data-i18n="breadcrumb_home">Ana Sayfa</a>
+            <span class="breadcrumb-sep">&gt;</span>
+            <span class="breadcrumb-current" data-i18n="breadcrumb_portfolio">Portföy</span>
+          </span>
+          <span class="breadcrumb-mobile">FIXRAL <span class="breadcrumb-sep">/</span> <span class="breadcrumb-current">PROJELERİMİZ</span></span>
         </nav>
+
+        <div class="portfolio-mobile-badge"><span class="tag-sq">■</span> İŞLERİMİZ</div>
+        <div class="portfolio-tablet-badge"><span class="tag-sq">■</span> <span data-i18n="port_tablet_badge">DENEYİM &amp; BAŞARI</span></div>
 
         <!-- Editorial Serif Title & Subtitle -->
         <div class="portfolio-hero-heading-block">
-          <h1 class="portfolio-hero-title" data-i18n="port_hero_title">Our Featured Projects</h1>
+          <h1 class="portfolio-hero-title">
+            <span class="title-desktop" data-i18n="port_hero_title">Öne Çıkan Projelerimiz</span>
+            <span class="title-mobile">Öne Çıkan Projeler</span>
+          </h1>
           <p class="portfolio-hero-desc" data-i18n="port_hero_desc">
-            Industrial success stories we have completed with precision engineering, digital optimization, and top-level manufacturing technologies.
+            Hassas mühendislik, dijital optimizasyon ve üst düzey üretim teknolojileriyle tamamladığımız endüstriyel başarı hikayeleri.
+          </p>
+          <p class="portfolio-hero-desc-tablet" data-i18n="port_hero_desc_tablet">
+            Mühendislik sınırlarını zorlayarak, en hassas toleranslarda hayata geçirdiğimiz referans tasarımlar.
           </p>
         </div>
       </div>
@@ -119,32 +132,40 @@
       <div class="container filter-container">
         <div class="portfolio-filter-chips" role="tablist" aria-label="Project Categories">
           <button class="filter-chip active" data-filter="all" role="tab" aria-selected="true">
-            <span data-i18n="filter_all">All</span>
+            <span class="chip-text-desktop" data-i18n="filter_all">Tümü</span>
+            <span class="chip-text-mobile">HEPSİ</span>
           </button>
           <button class="filter-chip" data-filter="3d-scan" role="tab" aria-selected="false">
-            <span data-i18n="filter_3d_scan">3D Scanning</span>
+            <span class="chip-text-desktop" data-i18n="filter_3d_scan">3D Tarama</span>
+            <span class="chip-text-tablet">3D TARAMA</span>
           </button>
-          <button class="filter-chip" data-filter="cad" role="tab" aria-selected="false">
-            <span data-i18n="filter_cad">CAD Modeling</span>
+          <button class="filter-chip chip-tablet-reverse" data-filter="cad" role="tab" aria-selected="false">
+            <span class="chip-text-desktop" data-i18n="filter_cad">CAD Modelleme</span>
+            <span class="chip-text-tablet">TERSİNE MÜHENDİSLİK</span>
+          </button>
+          <button class="filter-chip chip-tablet-cad" data-filter="cad" role="tab" aria-selected="false">
+            CAD TASARIM
           </button>
           <button class="filter-chip" data-filter="3d-print" role="tab" aria-selected="false">
-            <span data-i18n="filter_3d_print">3D Printing</span>
+            <span class="chip-text-desktop" data-i18n="filter_3d_print">3D Baskı</span>
+            <span class="chip-text-tablet">3D BASKI</span>
           </button>
           <button class="filter-chip" data-filter="restoration" role="tab" aria-selected="false">
-            <span data-i18n="filter_restoration">Restoration</span>
+            <span class="chip-text-desktop" data-i18n="filter_restoration">Restorasyon</span>
+            <span class="chip-text-tablet">RESTORASYON</span>
           </button>
-          <button class="filter-chip" data-filter="digital" role="tab" aria-selected="false">
-            <span data-i18n="filter_digital">Digital Solutions</span>
+          <button class="filter-chip chip-hide-tablet" data-filter="digital" role="tab" aria-selected="false">
+            <span data-i18n="filter_digital">Dijital Çözümler</span>
           </button>
-          <button class="filter-chip" data-filter="automotive" role="tab" aria-selected="false">
-            <span data-i18n="filter_automotive">Automotive</span>
+          <button class="filter-chip chip-hide-tablet" data-filter="automotive" role="tab" aria-selected="false">
+            <span data-i18n="filter_automotive">Otomotiv</span>
           </button>
         </div>
 
         <!-- Technical HUD Status Indicator -->
         <div class="portfolio-hud-status" aria-live="polite">
           <span class="hud-bracket">⊢</span>
-          <span class="hud-text">GRID_VIEW: ACTIVE [<span id="portfolioCount" class="hud-counter">6</span>_PROJECTS]</span>
+          <span class="hud-text">GRID_VIEW: ACTIVE [<span id="portfolioCount" class="hud-counter">7</span>_PROJECTS]</span>
         </div>
       </div>
     </section>
@@ -159,21 +180,22 @@
           <!-- Card 1: Porsche 911 Restoration -->
           <article class="portfolio-item-card" data-category="restoration 3d-scan automotive" id="project-porsche">
             <div class="portfolio-card-media">
-              <img src="assets/images/portfolio/portfolio-porsche.png" alt="Classic Porsche 911 3D Optical Scan Body Restoration" loading="lazy">
+              <img src="assets/images/portfolio/portfolio-phone-1-porsche.png" alt="Classic Porsche 911 3D Optical Scan Body Restoration" loading="lazy">
               <div class="portfolio-spec-overlay">
-                <span class="spec-crosshair">⊞</span>
-                <span class="spec-text" data-i18n="p1_spec">±0.08 mm deviation tolerance</span>
-                <span class="spec-hud-tick">⊢</span>
+                <div class="portfolio-spec-badge">
+                  <span class="spec-text" data-i18n="p1_spec">±0.08 mm sapma toleransı</span>
+                </div>
+                <div class="portfolio-hud-corner-tick">⊢</div>
               </div>
             </div>
             <div class="portfolio-card-body">
               <div class="portfolio-card-meta">
-                <span class="portfolio-category-tags" data-i18n="p1_tags">VEHICLE RESTORATION / 3D SCANNING</span>
-                <span class="portfolio-date-tag" data-i18n="p1_date">SEPTEMBER 2024</span>
+                <span class="portfolio-category-tags" data-i18n="p1_tags">ARAÇ RESTORASYON / 3D TARAMA</span>
+                <span class="portfolio-date-tag" data-i18n="p1_date">EYLÜL 2024</span>
               </div>
-              <h2 class="portfolio-card-title" data-i18n="p1_title">Classic Porsche Body Restoration</h2>
+              <h2 class="portfolio-card-title" data-i18n="p1_title">Klasik Porsche Gövde Restorasyonu</h2>
               <p class="portfolio-card-desc" data-i18n="p1_desc">
-                Millimetric optical scanning and aerodynamic surface re-modeling of a rare 1974 Porsche 911 chassis for wind tunnel validation.
+                Nadir bulunan 1974 model Porsche 911 gövdesinin milimetrik taranarak rüzgar tüneli testlerine uygun biçimde aerodinamik olarak yeniden modellendi.
               </p>
               <div class="portfolio-card-footer">
                 <span class="card-tech-hud">[ SYS_OPTICAL_SCAN_ACTIVE ]</span>
@@ -184,21 +206,22 @@
           <!-- Card 2: Aerospace Turbine Blade -->
           <article class="portfolio-item-card" data-category="cad 3d-print" id="project-turbine">
             <div class="portfolio-card-media">
-              <img src="assets/images/portfolio/portfolio-turbine.png" alt="Aerospace Gas Turbine Blade SLS Additive Manufacturing" loading="lazy">
+              <img src="assets/images/portfolio/portfolio-phone-2-turbine.png" alt="Aerospace Gas Turbine Blade SLS Additive Manufacturing" loading="lazy">
               <div class="portfolio-spec-overlay">
-                <span class="spec-crosshair">⊞</span>
-                <span class="spec-text" data-i18n="p2_spec">20 micron SLS layer precision</span>
-                <span class="spec-hud-tick">⊢</span>
+                <div class="portfolio-spec-badge">
+                  <span class="spec-text" data-i18n="p2_spec">20 micron SLS katman hassasiyeti</span>
+                </div>
+                <div class="portfolio-hud-corner-tick">⊢</div>
               </div>
             </div>
             <div class="portfolio-card-body">
               <div class="portfolio-card-meta">
-                <span class="portfolio-category-tags" data-i18n="p2_tags">REVERSE ENGINEERING / SLS PRINTING</span>
-                <span class="portfolio-date-tag" data-i18n="p2_date">AUGUST 2024</span>
+                <span class="portfolio-category-tags" data-i18n="p2_tags">TERSİNE MÜHENDİSLİK / SLS BASKI</span>
+                <span class="portfolio-date-tag" data-i18n="p2_date">AĞUSTOS 2024</span>
               </div>
-              <h2 class="portfolio-card-title" data-i18n="p2_title">Precision Aerospace Turbine Blade</h2>
+              <h2 class="portfolio-card-title" data-i18n="p2_title">Hassas Havacılık Türbin Kanadı</h2>
               <p class="portfolio-card-desc" data-i18n="p2_desc">
-                Micro-wear margin analysis of gas turbine blade geometry, aero-dynamic structural optimization, and flight-grade SLS 3D additive manufacturing.
+                Gaz türbin kanadının mikron düzeyindeki aşınma payları analiz edilerek aero-dinamik yapısı iyileştirildi ve havacılık uyumlu SLS 3D baskı ile üretildi.
               </p>
               <div class="portfolio-card-footer">
                 <span class="card-tech-hud">[ SYS_REV_ENG_TURBINE ]</span>
@@ -209,21 +232,22 @@
           <!-- Card 3: Robotic Arm Joint Prototype -->
           <article class="portfolio-item-card" data-category="cad 3d-print digital" id="project-robotic-arm">
             <div class="portfolio-card-media">
-              <img src="assets/images/portfolio/portfolio-robotic-arm.png" alt="Robotic Arm Joint Prototype Topology Optimization" loading="lazy">
+              <img src="assets/images/portfolio/portfolio-phone-3-robot.png" alt="Robotic Arm Joint Prototype Topology Optimization" loading="lazy">
               <div class="portfolio-spec-overlay">
-                <span class="spec-crosshair">⊞</span>
-                <span class="spec-text" data-i18n="p3_spec">STL format certified validation</span>
-                <span class="spec-hud-tick">⊢</span>
+                <div class="portfolio-spec-badge">
+                  <span class="spec-text" data-i18n="p3_spec">STL format doğrulama onaylı</span>
+                </div>
+                <div class="portfolio-hud-corner-tick">⊢</div>
               </div>
             </div>
             <div class="portfolio-card-body">
               <div class="portfolio-card-meta">
-                <span class="portfolio-category-tags" data-i18n="p3_tags">CAD DESIGN / SLA PROTOTYPING</span>
-                <span class="portfolio-date-tag" data-i18n="p3_date">JULY 2024</span>
+                <span class="portfolio-category-tags" data-i18n="p3_tags">CAD TASARIM / SLA PROTOTİPLEME</span>
+                <span class="portfolio-date-tag" data-i18n="p3_date">TEMMUZ 2024</span>
               </div>
-              <h2 class="portfolio-card-title" data-i18n="p3_title">Robotic Arm Joint Prototype</h2>
+              <h2 class="portfolio-card-title" data-i18n="p3_title">Robotik Kol Eklem Prototipi</h2>
               <p class="portfolio-card-desc" data-i18n="p3_desc">
-                Topology optimization and finite-element stress analysis to reduce payload weight for high-torque industrial robotic articulated arm joints.
+                Yüksek tork altında çalışacak endüstriyel robotik kol eklemlerinin hafifletilmesi için topoloji optimizasyonu yapıldı ve mukavemet testleri tamamlandı.
               </p>
               <div class="portfolio-card-footer">
                 <span class="card-tech-hud">[ CAD_PARAMETRIC_OPTIMIZED ]</span>
@@ -231,24 +255,51 @@
             </div>
           </article>
 
-          <!-- Card 4: Autonomous Vehicle LiDAR Housing -->
-          <article class="portfolio-item-card" data-category="cad 3d-print automotive" id="project-lidar">
+          <!-- Card 4: Industrial Pump Impeller Renewal -->
+          <article class="portfolio-item-card" data-category="cad 3d-scan" id="project-pump-impeller">
             <div class="portfolio-card-media">
-              <img src="assets/images/portfolio/portfolio-lidar.png" alt="Autonomous Vehicle LiDAR Sensor Box Enclosure SLA" loading="lazy">
+              <img src="assets/images/portfolio/portfolio-phone-4-impeller.png" alt="Industrial Pump Impeller Reverse Engineering and CMM Analysis" loading="lazy">
               <div class="portfolio-spec-overlay">
-                <span class="spec-crosshair">⊞</span>
-                <span class="spec-text" data-i18n="p4_spec">IP67 environmental sealing</span>
-                <span class="spec-hud-tick">⊢</span>
+                <div class="portfolio-spec-badge">
+                  <span class="spec-text" data-i18n="p7_spec">Orijinal CAD eşleştirme payı</span>
+                </div>
+                <div class="portfolio-hud-corner-tick">⊢</div>
               </div>
             </div>
             <div class="portfolio-card-body">
               <div class="portfolio-card-meta">
-                <span class="portfolio-category-tags" data-i18n="p4_tags">INDUSTRIAL DESIGN / SLA PRINTING</span>
-                <span class="portfolio-date-tag" data-i18n="p4_date">JUNE 2024</span>
+                <span class="portfolio-category-tags" data-i18n="p7_tags">TERSİNE MÜHENDİSLİK / CMM ANALİZ</span>
+                <span class="portfolio-date-tag" data-i18n="p7_date">HAZİRAN 2024</span>
               </div>
-              <h2 class="portfolio-card-title" data-i18n="p4_title">Autonomous Vehicle LiDAR Sensor Box</h2>
+              <h2 class="portfolio-card-title" data-i18n="p7_title">Endüstriyel Pompa Pervanesi Yenileme</h2>
+              <p class="portfolio-card-desc" data-i18n="p7_desc">
+                Aşınmış endüstriyel pompa pervanesinin CMM ve 3D optik tarama ile mikron toleranslı dijital modeli çıkarılarak yenileme üretimi tamamlandı.
+              </p>
+              <div class="portfolio-card-footer">
+                <span class="card-tech-hud">[ CMM_ANALYSIS_VERIFIED ]</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Autonomous Vehicle LiDAR Housing -->
+          <article class="portfolio-item-card" data-category="cad 3d-print automotive" id="project-lidar">
+            <div class="portfolio-card-media">
+              <img src="assets/images/portfolio/portfolio-lidar.png" alt="Autonomous Vehicle LiDAR Sensor Box Enclosure SLA" loading="lazy">
+              <div class="portfolio-spec-overlay">
+                <div class="portfolio-spec-badge">
+                  <span class="spec-text" data-i18n="p4_spec">IP67 sızdırmazlık toleransı</span>
+                </div>
+                <div class="portfolio-hud-corner-tick">⊢</div>
+              </div>
+            </div>
+            <div class="portfolio-card-body">
+              <div class="portfolio-card-meta">
+                <span class="portfolio-category-tags" data-i18n="p4_tags">ENDÜSTRİYEL TASARIM / SLA BASKI</span>
+                <span class="portfolio-date-tag" data-i18n="p4_date">HAZİRAN 2024</span>
+              </div>
+              <h2 class="portfolio-card-title" data-i18n="p4_title">Otonom Araç LiDAR Sensör Kutusu</h2>
               <p class="portfolio-card-desc" data-i18n="p4_desc">
-                Precision SLA resin casting of ruggedized autonomous vehicle LiDAR enclosure with integrated active cooling channels and weatherproofing.
+                Zorlu saha şartlarına dayanıklı, su geçirmez ve aktif soğutma kanallarına sahip LiDAR sensör muhafaza kutusunun SLA hassas dökümü gerçekleştirildi.
               </p>
               <div class="portfolio-card-footer">
                 <span class="card-tech-hud">[ SLA_TRANS_RESIN_V3 ]</span>
@@ -256,24 +307,25 @@
             </div>
           </article>
 
-          <!-- Card 5: Bionic Prosthetic Hand -->
+          <!-- Card 6: Bionic Prosthetic Hand -->
           <article class="portfolio-item-card" data-category="cad 3d-print digital" id="project-prosthetic">
             <div class="portfolio-card-media">
               <img src="assets/images/portfolio/portfolio-prosthetic-hand.png" alt="Bionic Prosthetic Hand Joint Mechanism SLS PA12" loading="lazy">
               <div class="portfolio-spec-overlay">
-                <span class="spec-crosshair">⊞</span>
-                <span class="spec-text" data-i18n="p5_spec">±0.05 mm articulated joint tolerance</span>
-                <span class="spec-hud-tick">⊢</span>
+                <div class="portfolio-spec-badge">
+                  <span class="spec-text" data-i18n="p5_spec">±0.05 mm eklem toleransı</span>
+                </div>
+                <div class="portfolio-hud-corner-tick">⊢</div>
               </div>
             </div>
             <div class="portfolio-card-body">
               <div class="portfolio-card-meta">
-                <span class="portfolio-category-tags" data-i18n="p5_tags">BIOMECHANICS / SLS PRINTING</span>
-                <span class="portfolio-date-tag" data-i18n="p5_date">MAY 2024</span>
+                <span class="portfolio-category-tags" data-i18n="p5_tags">BİYOMEKANİK / SLS BASKI</span>
+                <span class="portfolio-date-tag" data-i18n="p5_date">MAYIS 2024</span>
               </div>
-              <h2 class="portfolio-card-title" data-i18n="p5_title">Medical Prosthetic Hand Mechanism</h2>
+              <h2 class="portfolio-card-title" data-i18n="p5_title">Medikal Protez El Mekanizması</h2>
               <p class="portfolio-card-desc" data-i18n="p5_desc">
-                Monolithic functional selective laser sintering (PA12) of anthropomorphic bionic prosthetic hand mechanism with custom anatomical fitting.
+                Kişiye özel ölçülerde tasarlanan biyonik el protezinin tüm hareketli eklem grupları tek parça halinde SLS PA12 teknolojisiyle fonksiyonel basıldı.
               </p>
               <div class="portfolio-card-footer">
                 <span class="card-tech-hud">[ BIO_PA12_SINTERED ]</span>
@@ -281,24 +333,25 @@
             </div>
           </article>
 
-          <!-- Card 6: Classic Alfa Romeo Dashboard -->
+          <!-- Card 7: Classic Alfa Romeo Dashboard -->
           <article class="portfolio-item-card" data-category="restoration 3d-scan cad automotive" id="project-alfa">
             <div class="portfolio-card-media">
               <img src="assets/images/portfolio/portfolio-alfa-romeo.png" alt="Classic 1968 Alfa Romeo Instrument Cluster Dashboard CAD" loading="lazy">
               <div class="portfolio-spec-overlay">
-                <span class="spec-crosshair">⊞</span>
-                <span class="spec-text" data-i18n="p6_spec">1:1 original form guarantee</span>
-                <span class="spec-hud-tick">⊢</span>
+                <div class="portfolio-spec-badge">
+                  <span class="spec-text" data-i18n="p6_spec">1:1 orijinal form garantisi</span>
+                </div>
+                <div class="portfolio-hud-corner-tick">⊢</div>
               </div>
             </div>
             <div class="portfolio-card-body">
               <div class="portfolio-card-meta">
-                <span class="portfolio-category-tags" data-i18n="p6_tags">PLASTIC REPRODUCTION / CAD</span>
-                <span class="portfolio-date-tag" data-i18n="p6_date">APRIL 2024</span>
+                <span class="portfolio-category-tags" data-i18n="p6_tags">PLASTİK REPRODÜKSİYON / CAD</span>
+                <span class="portfolio-date-tag" data-i18n="p6_date">NİSAN 2024</span>
               </div>
-              <h2 class="portfolio-card-title" data-i18n="p6_title">Classic Alfa Romeo Dashboard Panel</h2>
+              <h2 class="portfolio-card-title" data-i18n="p6_title">Klasik Alfa Romeo Gösterge Paneli</h2>
               <p class="portfolio-card-desc" data-i18n="p6_desc">
-                High-resolution photogrammetric and optical scanning of sun-damaged 1968 classic Alfa Romeo dashboard components, followed by CAD mold recreation.
+                Güneş hasarı ve yaşlanma sebebiyle bozulan 1968 model klasik Alfa Romeo ön panel parçaları taranıp, tersine mühendislikle aslına uygun döküldü.
               </p>
               <div class="portfolio-card-footer">
                 <span class="card-tech-hud">[ REPRO_MOLD_SUCCESS ]</span>
@@ -311,47 +364,56 @@
         <!-- No Results Fallback State -->
         <div class="portfolio-empty-state" id="portfolioEmptyState" style="display: none;">
           <div class="empty-state-icon">⊡</div>
-          <h3 data-i18n="port_empty_title">No Projects Found</h3>
-          <p data-i18n="port_empty_desc">No engineering projects matched the selected category. Try selecting a different filter.</p>
+          <h3 data-i18n="port_empty_title">Proje Bulunamadı</h3>
+          <p data-i18n="port_empty_desc">Seçilen kategoriyle eşleşen mühendislik projesi bulunamadı. Farklı bir filtre deneyin.</p>
         </div>
 
         <!-- ========================================================================
-             PAGINATION BAR
+             PAGINATION BAR (MATCHING FIGMA 05_grid_block_bottom.png)
              ======================================================================== -->
         <div class="portfolio-pagination-bar">
           <button class="pagination-btn pagination-prev disabled" id="prevPageBtn" disabled>
-            <span data-i18n="pag_prev">Previous</span>
+            <span class="prev-desktop" data-i18n="pag_prev">← Önceki Sayfa</span>
+            <span class="prev-mobile">Geri</span>
           </button>
           
-          <div class="pagination-numbers">
-            <button class="page-num-btn active" data-page="1">01</button>
-            <button class="page-num-btn" data-page="2">02</button>
-            <button class="page-num-btn" data-page="3">03</button>
+          <div class="pagination-numbers" id="paginationNumbers">
+            <button class="page-num-btn active" data-page="1">
+              <span class="num-desktop">01</span>
+              <span class="num-mobile">1</span>
+            </button>
+            <button class="page-num-btn" data-page="2">
+              <span class="num-desktop">02</span>
+              <span class="num-mobile">2</span>
+            </button>
+            <button class="page-num-btn page-num-3" data-page="3">
+              <span class="num-desktop">03</span>
+              <span class="num-mobile">3</span>
+            </button>
           </div>
 
           <button class="pagination-btn pagination-next" id="nextPageBtn">
-            <span data-i18n="pag_next">Next</span>
-            <span class="pag-arrow">➔</span>
+            <span class="next-desktop" data-i18n="pag_next">Sonraki Sayfa →</span>
+            <span class="next-mobile">İleri</span>
           </button>
         </div>
       </div>
     </section>
 
     <!-- ========================================================================
-         CALL TO ACTION BANNER (MATCHING FIGMA CTA-SECTION)
+         CALL TO ACTION BANNER (MATCHING FIGMA 06_cta_section.png)
          ======================================================================== -->
     <section class="cta-section portfolio-cta-banner" style="background-image: url('assets/images/portfolio/portfolio-cta-backdrop.png');">
       <div class="container cta-container">
         <div class="cta-content">
-          <h2 class="cta-title" data-i18n="cta_title">Let's Bring Your Project to Life</h2>
+          <h2 class="cta-title" data-i18n="cta_title">Projenizi Hayata Geçirelim</h2>
           <p class="cta-desc" data-i18n="cta_desc">
-            Prepare your ideas and component requirements flawlessly for production with Fixral's micron-level precision scanning, reverse engineering, and advanced digital modeling capabilities.
+            Fixral’ın mikron düzeyinde hassas tarama, tersine mühendislik ve gelişmiş dijital modelleme kabiliyetleriyle fikirleriniz ve parça ihtiyaçlarınız kusursuzca üretime hazırlansın.
           </p>
-          <a href="#quote" class="btn-primary btn-large trigger-quote-modal">
-            <span data-i18n="cta_btn">Get a Quote &amp; Start</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
+          <a href="#quote" class="btn-primary trigger-quote-modal">
+            <span data-i18n="cta_btn">Teklif Al ve Başla</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
           </a>
         </div>
@@ -364,16 +426,17 @@
        ======================================================================== -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-top-grid">
         <!-- Brand Summary -->
         <div class="footer-brand-col">
           <a href="index.html" class="brand-logo footer-logo">
-            <img src="assets/images/logo.svg" alt="Fixral Studio">
+            <img src="assets/images/logo.svg" alt="Fixral Studio" class="logo-desktop">
+            <img src="assets/images/logo-mobile.svg" alt="Fixral Studio" class="logo-mobile">
           </a>
           <p class="footer-desc-text" data-i18n="footer_desc">
-            Micron-precision engineering solutions, 3D modeling, and advanced technology prototyping leader. Accuracy beyond limits.
+            Hassas mühendislik çözümleri, 3D modelleme ve teknolojik prototiplemede lider ortağınız.
           </p>
-          <div class="footer-socials">
+          <div class="footer-social-links">
             <a href="#" class="social-btn" aria-label="Facebook">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
             </a>
@@ -391,62 +454,65 @@
 
         <!-- Services Links -->
         <div class="footer-col">
-          <div class="footer-col-title" data-i18n="footer_title_services">SERVICES</div>
+          <div class="footer-col-title" data-i18n="footer_title_services">HİZMETLER</div>
           <ul class="footer-links-list">
-            <li><a href="index.html#services" data-i18n="foot_link_3d">3D Scanning &amp; Reverse Eng.</a></li>
-            <li><a href="index.html#services" data-i18n="foot_link_cad">CAD Modeling &amp; Design</a></li>
-            <li><a href="index.html#services" data-i18n="foot_link_print">3D Printing &amp; Prototyping</a></li>
-            <li><a href="index.html#services" data-i18n="foot_link_cmm">CMM &amp; Quality Control</a></li>
-            <li><a href="index.html#services" data-i18n="foot_link_rest">Vehicle &amp; Plastic Restoration</a></li>
+            <li><a href="index.html#services" data-i18n="foot_link_3d"><span class="foot-text-full">3D Tarama &amp; Tersine Mühendislik</span><span class="foot-text-tablet">3D Tarama</span></a></li>
+            <li><a href="index.html#services" data-i18n="foot_link_cad"><span class="foot-text-full">CAD Modelleme &amp; Tasarım</span><span class="foot-text-tablet">Tersine Mühendislik</span></a></li>
+            <li><a href="index.html#services" data-i18n="foot_link_print"><span class="foot-text-full">3D Baskı &amp; Prototipleme</span><span class="foot-text-tablet">CAD Modelleme</span></a></li>
+            <li><a href="index.html#services" data-i18n="foot_link_cmm"><span class="foot-text-full">CMM &amp; Kalite Kontrol</span><span class="foot-text-tablet">3D Baskı</span></a></li>
+            <li><a href="index.html#services" data-i18n="foot_link_rest"><span class="foot-text-full">Araç &amp; Plastik Restorasyon</span><span class="foot-text-tablet">Kalite Kontrol</span></a></li>
           </ul>
         </div>
 
         <!-- Company Links -->
         <div class="footer-col">
-          <div class="footer-col-title" data-i18n="footer_title_company">COMPANY</div>
+          <div class="footer-col-title" data-i18n="footer_title_company">ŞİRKET</div>
           <ul class="footer-links-list">
-            <li><a href="index.html#top" data-i18n="foot_link_about">About Us</a></li>
-            <li><a href="portfolio.html" data-i18n="foot_link_proj">Our Projects</a></li>
-            <li><a href="index.html#top" data-i18n="foot_link_lab">Laboratory &amp; Equipment</a></li>
-            <li><a href="index.html#top" data-i18n="foot_link_careers">Careers</a></li>
-            <li><a href="index.html#contact" data-i18n="foot_link_contact">Contact</a></li>
+            <li><a href="index.html#top" data-i18n="foot_link_about">Hakkımızda</a></li>
+            <li><a href="portfolio.html" data-i18n="foot_link_proj">Projelerimiz</a></li>
+            <li><a href="index.html#top" data-i18n="foot_link_lab">Laboratuvar</a></li>
+            <li><a href="index.html#top" data-i18n="foot_link_careers">Kariyer</a></li>
+            <li><a href="index.html#contact" data-i18n="foot_link_contact">İletişim</a></li>
           </ul>
         </div>
 
         <!-- Support Links -->
-        <div class="footer-col">
-          <div class="footer-col-title" data-i18n="footer_title_support">SUPPORT</div>
+        <div class="footer-col footer-destek-col">
+          <div class="footer-col-title" data-i18n="footer_title_support">DESTEK</div>
           <ul class="footer-links-list">
-            <li><a href="#quote" class="trigger-quote-modal" data-i18n="foot_link_quote">Request a Quote</a></li>
-            <li><a href="index.html#top" data-i18n="foot_link_faq">FAQ</a></li>
-            <li><a href="index.html#top" data-i18n="foot_link_docs">Technical Documentation</a></li>
-            <li><a href="index.html#top" data-i18n="foot_link_format">CAD Format Standards</a></li>
+            <li><a href="#quote" class="trigger-quote-modal" data-i18n="foot_link_quote">Teklif Kılavuzu</a></li>
+            <li><a href="index.html#top" data-i18n="foot_link_faq">SSS</a></li>
+            <li><a href="index.html#top" data-i18n="foot_link_docs">Teknik Dokümanlar</a></li>
+            <li><a href="index.html#top" data-i18n="foot_link_format">Format Standartları</a></li>
           </ul>
         </div>
 
         <!-- Contact Info -->
-        <div class="footer-col">
-          <div class="footer-col-title" data-i18n="footer_title_contact">CONTACT</div>
-          <div class="footer-contact-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>Ikitelli Organize Sanayi Bölgesi, Metal İş Sanayi Sitesi 14. Blok, Başakşehir, İstanbul</span>
+        <div class="footer-col footer-contact-col">
+          <div class="footer-col-title" data-i18n="footer_title_contact">İLETİŞİM</div>
+          <div class="footer-contact-item item-email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>info@fixral.com</span>
           </div>
-          <div class="footer-contact-item">
+          <div class="footer-contact-item item-phone">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             <span>+90 (212) 555 0199</span>
           </div>
-          <div class="footer-contact-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            <span>info@fixral.com</span>
+          <div class="footer-contact-item item-address footer-address-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span class="full-address-text">İkitelli Organize Sanayi Bölgesi, Metal İş Sanayi Sitesi 14. Blok, Başakşehir, İstanbul</span>
+            <span class="tablet-address-text">Başakşehir, İstanbul</span>
           </div>
         </div>
       </div>
 
+      <div class="footer-divider-mobile footer-divider-tablet"></div>
+
       <div class="footer-bottom-bar">
-        <div data-i18n="footer_copy">© 2024 FIXRAL Industrial Engineering Studio. All rights reserved.</div>
+        <div data-i18n="footer_copy">© 2024 FIXRAL Industrial Studio. Tüm hakları saklıdır.</div>
         <div class="footer-bottom-links">
-          <a href="#" data-i18n="foot_privacy">Privacy Policy</a>
-          <a href="#" data-i18n="foot_terms">Terms of Service</a>
+          <a href="#" data-i18n="foot_privacy">Gizlilik Politikası</a>
+          <a href="#" class="foot-terms-link" data-i18n="foot_terms">Kullanım Koşulları</a>
         </div>
       </div>
     </div>

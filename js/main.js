@@ -96,8 +96,10 @@ const translations = {
     /* Portfolio Page Specific Keys */
     breadcrumb_home: "Home",
     breadcrumb_portfolio: "Portfolio",
+    port_tablet_badge: "EXPERIENCE & SUCCESS",
     port_hero_title: "Our Featured Projects",
     port_hero_desc: "Industrial success stories we have completed with precision engineering, digital optimization, and top-level manufacturing technologies.",
+    port_hero_desc_tablet: "Reference designs brought to life at the most precise tolerances by pushing engineering boundaries.",
     filter_all: "All",
     filter_3d_scan: "3D Scanning",
     filter_cad: "CAD Modeling",
@@ -135,10 +137,37 @@ const translations = {
     p6_date: "APRIL 2024",
     p6_title: "Classic Alfa Romeo Dashboard Panel",
     p6_desc: "High-resolution photogrammetric and optical scanning of sun-damaged 1968 classic Alfa Romeo dashboard components, followed by CAD mold recreation.",
+    p7_spec: "Original CAD matching allowance",
+    p7_tags: "REVERSE ENGINEERING / CMM ANALYSIS",
+    p7_date: "JUNE 2024",
+    p7_title: "Industrial Pump Impeller Renewal",
+    p7_desc: "Micron-tolerance digital twin generated via CMM probe and 3D optical scanning for wear-resistant renewal manufacturing.",
     port_empty_title: "No Projects Found",
     port_empty_desc: "No engineering projects matched the selected category. Try selecting a different filter.",
     pag_prev: "Previous",
-    pag_next: "Next"
+    pag_next: "Next",
+
+    /* Footer Links & Titles */
+    footer_title_services: "SERVICES",
+    footer_title_company: "COMPANY",
+    footer_title_support: "SUPPORT",
+    footer_title_contact: "CONTACT",
+    foot_link_3d: "3D Scanning & Reverse Eng.",
+    foot_link_cad: "CAD Modeling & Design",
+    foot_link_print: "3D Printing & Prototyping",
+    foot_link_cmm: "CMM & Quality Control",
+    foot_link_rest: "Vehicle & Plastic Restoration",
+    foot_link_about: "About Us",
+    foot_link_proj: "Our Projects",
+    foot_link_lab: "Laboratory & Equipment",
+    foot_link_careers: "Careers",
+    foot_link_contact: "Contact",
+    foot_link_quote: "Request a Quote",
+    foot_link_faq: "FAQ",
+    foot_link_docs: "Technical Documentation",
+    foot_link_format: "CAD Format Standards",
+    foot_privacy: "Privacy Policy",
+    foot_terms: "Terms of Service"
   },
   tr: {
     nav_home: "Ana Sayfa",
@@ -191,8 +220,10 @@ const translations = {
     /* Portfolio Page Specific Keys */
     breadcrumb_home: "Ana Sayfa",
     breadcrumb_portfolio: "Portfolyo",
+    port_tablet_badge: "DENEYİM & BAŞARI",
     port_hero_title: "Öne Çıkan Projelerimiz",
     port_hero_desc: "Hassas mühendislik, dijital optimizasyon ve üst düzey üretim teknolojileriyle tamamladığımız endüstriyel başarı hikayeleri.",
+    port_hero_desc_tablet: "Mühendislik sınırlarını zorlayarak, en hassas toleranslarda hayata geçirdiğimiz referans tasarımlar.",
     filter_all: "Tümü",
     filter_3d_scan: "3D Tarama",
     filter_cad: "CAD Modelleme",
@@ -230,10 +261,37 @@ const translations = {
     p6_date: "NİSAN 2024",
     p6_title: "Klasik Alfa Romeo Gösterge Paneli",
     p6_desc: "Güneşten hasar görmüş 1968 klasik Alfa Romeo gösterge paneli bileşenlerinin yüksek çözünürlüklü fotogrametrik ve optik taraması ve ardından CAD kalıp yeniden üretimi.",
+    p7_spec: "Orijinal CAD eşleştirme payı",
+    p7_tags: "TERSİNE MÜHENDİSLİK / CMM ANALİZ",
+    p7_date: "HAZİRAN 2024",
+    p7_title: "Endüstriyel Pompa Pervanesi Yenileme",
+    p7_desc: "Aşınmış endüstriyel pompa pervanesinin CMM ve 3D optik tarama ile mikron toleranslı dijital modeli çıkarılarak yenileme üretimi tamamlandı.",
     port_empty_title: "Proje Bulunamadı",
     port_empty_desc: "Seçilen kategoriyle eşleşen mühendislik projesi bulunamadı. Farklı bir filtre deneyin.",
-    pag_prev: "Önceki",
-    pag_next: "Sonraki"
+    pag_prev: "Geri",
+    pag_next: "İleri",
+
+    /* Footer Links & Titles */
+    footer_title_services: "HİZMETLER",
+    footer_title_company: "ŞİRKET",
+    footer_title_support: "DESTEK",
+    footer_title_contact: "İLETİŞİM",
+    foot_link_3d: "3D Tarama & Tersine Mühendislik",
+    foot_link_cad: "CAD Modelleme & Tasarım",
+    foot_link_print: "3D Baskı & Prototipleme",
+    foot_link_cmm: "CMM & Kalite Kontrol",
+    foot_link_rest: "Araç & Plastik Restorasyon",
+    foot_link_about: "Hakkımızda",
+    foot_link_proj: "Projelerimiz",
+    foot_link_lab: "Laboratuvar",
+    foot_link_careers: "Kariyer",
+    foot_link_contact: "İletişim",
+    foot_link_quote: "Teklif Kılavuzu",
+    foot_link_faq: "SSS",
+    foot_link_docs: "Teknik Dokümanlar",
+    foot_link_format: "Format Standartları",
+    foot_privacy: "Gizlilik Politikası",
+    foot_terms: "Kullanım Koşulları"
   }
 };
 
@@ -243,7 +301,7 @@ function initLanguageSwitcher() {
   const desktopDisplay = document.getElementById('currentLang');
   const mobileDisplay = document.getElementById('mobileCurrentLang');
 
-  let currentLang = 'en';
+  let currentLang = (desktopDisplay && desktopDisplay.textContent.trim().toLowerCase() === 'tr') ? 'tr' : 'en';
 
   const toggleLanguage = (e) => {
     if (e) e.stopPropagation();
@@ -407,7 +465,8 @@ function initPortfolioFiltering() {
         const matches = (filterValue === 'all' || categories.includes(filterValue));
 
         if (matches) {
-          card.style.display = 'flex';
+          card.classList.remove('is-hidden');
+          card.style.display = '';
           card.style.opacity = '0';
           card.style.transform = 'translateY(8px)';
           setTimeout(() => {
@@ -417,6 +476,7 @@ function initPortfolioFiltering() {
           }, 30);
           visibleCount++;
         } else {
+          card.classList.add('is-hidden');
           card.style.display = 'none';
         }
       });
