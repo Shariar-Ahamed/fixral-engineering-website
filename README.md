@@ -1,58 +1,66 @@
 # FIXRAL Industrial Engineering Studio
 
 > **Limitless Precision in Industrial Engineering, 3D Scanning & Prototyping.**  
-> Official web platform for Fixral Engineering Studio, converting physical parts into high-precision digital models and rapid manufacturing solutions.
+> Official web platform for Fixral Engineering Studio, converting physical parts into high-precision digital models and rapid manufacturing solutions. Built with **Vite + React (TypeScript)**.
 
-🔗 **Live Website:** [https://shariar-ahamed.github.io/fixral-engineering/](https://shariar-ahamed.github.io/fixral-engineering/)
+🔗 **Live Website:** [https://fixral-engineering.vercel.app/](https://fixral-engineering.vercel.app/)
 
 ---
 
 ## 📁 Project Architecture & Directory Organization
 
-The project is structured according to industry standards for high-performance, maintainable web applications:
+The project is structured according to modern standards for high-performance Vite + React applications:
 
 ```text
 fixral-engineering/
 │
-├── assets/                       # Production web assets
-│   └── images/                   # Optimized images, vectors, and brand logo
-│       ├── logo.svg              # Primary brand vector mark
-│       ├── hero-right.png        # 3D Jet engine scanning render
-│       ├── frame-1.png           # Featured project: Classic Porsche restoration
-│       ├── frame-2.png           # Featured project: Aerospace turbine blade
-│       ├── frame-3.png           # Featured project: Robotic arm joint
-│       ├── rectangle.png         # News: SLS Metal Sintering
-│       ├── rectangle-1.png       # News: Classic automobile parts
-│       ├── rectangle-2.png       # News: High-precision CMM
-│       └── cta-section.png       # Call-to-action background banner
+├── public/                       # Static public assets (served at root)
+│   └── assets/
+│       └── images/               # Optimized production images & vectors
+│           ├── logo.svg          # Desktop brand vector logo
+│           ├── logo-mobile.svg   # Mobile brand vector logo
+│           ├── hero-right.png    # 3D Optical jet engine scanning visual
+│           ├── frame-1.png       # Featured project: Classic Porsche restoration
+│           ├── frame-2.png       # Featured project: Aerospace turbine blade
+│           ├── frame-3.png       # Featured project: Robotic arm joint
+│           ├── rectangle.png     # Technology insight: Metal sintering
+│           ├── rectangle-1.png   # Technology insight: Classic car parts
+│           ├── rectangle-2.png   # Technology insight: AI dimensional analysis
+│           ├── cta-section.png   # CTA background graphic
+│           └── portfolio/        # High-resolution portfolio case study assets
 │
-├── css/                          # Stylesheet architecture
-│   └── style.css                 # Comprehensive design system (tokens, components, responsive layout)
-│
-├── js/                           # Client-side JavaScript
-│   └── main.js                   # Interactive logic: HUD coordinate simulation, EN/TR i18n, modals, mobile menu
+├── src/                          # Application source code
+│   ├── components/               # Reusable React components
+│   │   ├── Navbar.tsx            # Header navigation with mobile drawer & active routing
+│   │   ├── Footer.tsx            # Comprehensive engineering footer
+│   │   ├── QuoteModal.tsx        # Interactive RFQ quote request modal dialog
+│   │   └── LiveScannerHUD.tsx    # Real-time jittering coordinate telemetry simulator
+│   │
+│   ├── pages/                    # Route page views
+│   │   ├── HomePage.tsx          # Main landing page (Hero, Services, Workflow, Stats, News, CTA)
+│   │   └── PortfolioPage.tsx     # Portfolio page (Dynamic filter chips, HUD counter, 7 projects)
+│   │
+│   ├── App.tsx                   # Main React Router configuration with ScrollToTop
+│   ├── main.tsx                  # ReactDOM application mount entrypoint
+│   └── index.css                 # Comprehensive design system & responsive stylesheet
 │
 ├── design/                       # Raw design sources & design handoff assets
-│   ├── desktop/                  # Desktop layout specifications
-│   │   └── home-page/
-│   │       ├── export-10-layers/ # SVG layer exports for each section
-│   │       └── single-components/# Master reference render (page_01.png)
-│   ├── main-file-fig/            # Master Figma project file (.fig)
+│   ├── desktop/                  # Desktop layout specifications (Figma frames & SVG layers)
 │   ├── tablet/                   # Tablet responsive design specs (768px layout)
-│   │   ├── page_01.png           # Master reference render
-│   │   └── home-page/            # Layer exports
-│   └── phone/                    # Mobile responsive design specs (390px layout)
-│       ├── page_01.png           # Master reference render
-│       └── home-page/            # Layer exports
+│   ├── phone/                    # Mobile responsive design specs (390px layout)
+│   └── main-file-fig/            # Master Figma project file (.fig)
 │
 ├── tools/                        # Engineering & workflow utilities
 │   ├── pdf_converter.py          # PyMuPDF-based PDF to 300 DPI image converter
 │   ├── requirements.txt          # Python dependencies for utilities
 │   └── README.md                 # Documentation for developer tools
 │
-├── convert_pdf.bat               # Windows drag-and-drop batch script for PDF conversion
-├── index.html                    # Main production entrypoint (Semantic HTML5, clean SVG icons)
-├── .gitignore                    # Standard Git exclusions for OS, IDEs, caches, and scratch files
+├── index.html                    # Vite HTML entrypoint with metadata & fonts
+├── package.json                  # Dependencies, scripts, and project metadata
+├── tsconfig.json                 # TypeScript compiler configuration
+├── tsconfig.node.json            # TypeScript bundler configuration
+├── vite.config.ts                # Vite build and React plugin configuration
+├── vercel.json                   # Vercel SPA rewrite routing configuration
 └── README.md                     # Project overview and technical documentation
 ```
 
@@ -60,76 +68,86 @@ fixral-engineering/
 
 ## 🚀 Getting Started
 
-### Local Development Server
+### Prerequisites
+- **Node.js**: v18.0 or higher
+- **npm**: v9.0 or higher
 
-To view and test the website locally, launch any static HTTP server from the root directory:
+### Installation
 
-**Using Python:**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Shariar-Ahamed/fixral-engineering.git
+   cd fixral-engineering
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development Server
+
+Run the local Vite development server with Hot Module Replacement (HMR):
 ```bash
-python -m http.server 8080
+npm run dev
 ```
-Then open your browser and navigate to: `http://localhost:8080`
+Open your browser and navigate to: **`http://localhost:5173`**
 
-**Using Node.js (npx):**
+### Production Build
+
+Type-check and build the optimized production bundle:
 ```bash
-npx serve .
+npm run build
+```
+The output will be generated inside the `dist/` directory.
+
+### Preview Production Build
+
+Preview the production build locally before deployment:
+```bash
+npm run preview
 ```
 
 ---
 
-## 🎨 Design System & Aesthetics
+## 🎨 Tech Stack & Design System
 
+- **Framework:** [React 18](https://react.dev/) + [Vite 5](https://vitejs.dev/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Routing:** [React Router v6](https://reactrouter.com/)
+- **Deployment:** [Vercel](https://vercel.com/) with SPA rewrites
 - **Color Palette:**
   - Background Deep Dark: `#0B0C0D`
-  - Surface Card Dark: `#131618` / Hover `#181B1E`
+  - Surface Card Dark: `#131618` / Hover `#171A1D`
   - Accent Industrial Orange: `#FF5200`
-  - Text Primary: `#EDEDED`
+  - Cyan Tech Glow: `#00E5FF`
+  - Text Primary: `#F5F6F7`
   - Text Dim / Muted: `#8E9498`
 - **Typography:**
-  - Body & UI: `Inter` / `Outfit`
-  - Monospace HUD: `JetBrains Mono` / `SF Mono` / `Courier New`
-- **Iconography:**
-  - Lightweight, semantic, hand-crafted 24×24 SVG vectors (Lucide/Feather icon standard) ensuring ultra-fast load times and clean code inspection.
+  - Editorial Headings: `Cinzel`
+  - UI / Body: `Plus Jakarta Sans` / `Inter`
+  - Monospace HUD / Code: `JetBrains Mono`
 
 ---
 
-## 🌐 Features & Functionality
+## 🌐 Key Features & Functionality
 
-1. **Interactive Scanner HUD:**
-   Real-time micro-jittering coordinate simulator (`COORD_X`, `COORD_Y`, `COORD_Z`) replicating laser calibration hardware.
+1. **Interactive Scanner Telemetry (Live HUD):**
+   Real-time micro-jittering coordinate simulator (`COORD_X`, `COORD_Y`, `COORD_Z`) replicating precision optical triangulation hardware.
 2. **Infinite Technical Marquee:**
-   Smooth hardware-accelerated ticker tape featuring Fixral's core engineering capabilities with crosshair delimiters.
-3. **8 Core Engineering Services:**
-   High-tech interactive cards covering 3D Scanning, CAD Modeling, 3D Printing, CMM Quality Control, Restoration, AI Solutions, Software Dev, and Automotive ECU.
+   Hardware-accelerated ticker tape showcasing Fixral's core engineering solutions with precision crosshair delimiters.
+3. **6 Industrial Engineering Services:**
+   High-tech interactive cards for 3D Scanning, CAD Modeling, Additive Manufacturing, CMM Quality Control, Part Restoration, and AI Solutions.
 4. **4-Step Workflow Pipeline:**
-   Numbered industrial timeline (`01 Scanning` → `02 Modeling` → `03 Manufacturing` → `04 Verification`) with orange dashed signal connectors.
-5. **Internationalization (i18n):**
-   Seamless bilingual switching between English (EN - default) and Turkish (TR).
+   Numbered industrial timeline (`01 Scanning` → `02 Modeling` → `03 Manufacturing` → `04 Verification`).
+5. **Interactive Portfolio with Dynamic Filtering:**
+   Dedicated `/portfolio` page with 7 case studies, active category filter chips (`All`, `3D Scanning`, `Reverse Engineering`, `CAD Design`, `3D Printing`, `Restoration`, `Digital Solutions`, `Automotive`), dynamic HUD counter, and pagination.
 6. **Request Quote Modal:**
-   Accessible modal dialog for client RFQ inquiries.
+   Interactive modal dialog for engineering RFQs with specification input and instant submission confirmation.
 7. **Pixel-Perfect Responsive Architecture:**
    Multi-tier responsive layouts specifically crafted for Desktop (1440px), Tablet (768px), and Mobile (390px) matching official Figma design frames.
-8. **Mobile Navigation Drawer & Full-Bleed CTA:**
-   Smooth animated hamburger-to-cross toggle with built-in language switcher and edge-to-edge full-bleed call-to-action banner.
-
----
-
-## 🛠️ Tooling & Utilities
-
-The project includes an automated desktop utility to convert multi-page PDF design files into crisp, 300 DPI high-resolution PNG images.
-
-### Quick Setup:
-Before using the converter tool on any PC or laptop, ensure Python is installed, then install the required libraries:
-
-```bash
-pip install pymupdf pillow
-# or
-pip install -r tools/requirements.txt
-```
-
-### Usage:
-- **Windows Drag & Drop:** Drag and drop any `.pdf` file directly onto `convert_pdf.bat` located in the root directory.
-- **CLI Commands & Advanced Options:** For custom DPI, formats (PNG/JPEG/WEBP), or CLI usage, refer to the [Tools Documentation](tools/README.md).
+8. **Mobile Drawer Navigation:**
+   Animated hamburger-to-cross toggle with smooth slide-down navigation drawer.
 
 ---
 
