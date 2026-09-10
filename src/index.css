@@ -2972,7 +2972,10 @@ button {
     margin-bottom: 0 !important;
   }
   .footer-social-links {
-    display: none !important;
+    display: flex !important;
+    gap: 8px !important;
+    margin-top: 14px !important;
+    flex-wrap: wrap !important;
   }
   .footer-col-title {
     font-family: var(--font-mono) !important;
@@ -3485,7 +3488,11 @@ button {
     margin-bottom: 0 !important;
   }
   .footer-social-links {
-    display: none !important;
+    display: flex !important;
+    gap: 8px !important;
+    margin-top: 14px !important;
+    margin-bottom: 6px !important;
+    flex-wrap: wrap !important;
   }
   .footer-top-grid .footer-col:nth-child(2),
   .footer-top-grid .footer-col:nth-child(3),
