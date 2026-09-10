@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuoteModal();
   initSmoothScroll();
   initMobileMenu();
+  initPortfolioFiltering();
+  initPortfolioPagination();
 });
 
 /* --------------------------------------------------------------------------
@@ -89,15 +91,62 @@ const translations = {
     footer_desc: "Micron-precision engineering solutions, 3D modeling, and advanced technology prototyping leader. Accuracy beyond limits.",
     footer_copy: "© 2024 FIXRAL Industrial Engineering Studio. All rights reserved.",
     read_more: "Read More",
-    explore_details: "Explore Details"
+    explore_details: "Explore Details",
+
+    /* Portfolio Page Specific Keys */
+    breadcrumb_home: "Home",
+    breadcrumb_portfolio: "Portfolio",
+    port_hero_title: "Our Featured Projects",
+    port_hero_desc: "Industrial success stories we have completed with precision engineering, digital optimization, and top-level manufacturing technologies.",
+    filter_all: "All",
+    filter_3d_scan: "3D Scanning",
+    filter_cad: "CAD Modeling",
+    filter_3d_print: "3D Printing",
+    filter_restoration: "Restoration",
+    filter_digital: "Digital Solutions",
+    filter_automotive: "Automotive",
+    p1_spec: "±0.08 mm deviation tolerance",
+    p1_tags: "VEHICLE RESTORATION / 3D SCANNING",
+    p1_date: "SEPTEMBER 2024",
+    p1_title: "Classic Porsche Body Restoration",
+    p1_desc: "Millimetric optical scanning and aerodynamic surface re-modeling of a rare 1974 Porsche 911 chassis for wind tunnel validation.",
+    p2_spec: "20 micron SLS layer precision",
+    p2_tags: "REVERSE ENGINEERING / SLS PRINTING",
+    p2_date: "AUGUST 2024",
+    p2_title: "Precision Aerospace Turbine Blade",
+    p2_desc: "Micro-wear margin analysis of gas turbine blade geometry, aero-dynamic structural optimization, and flight-grade SLS 3D additive manufacturing.",
+    p3_spec: "STL format certified validation",
+    p3_tags: "CAD DESIGN / SLA PROTOTYPING",
+    p3_date: "JULY 2024",
+    p3_title: "Robotic Arm Joint Prototype",
+    p3_desc: "Topology optimization and finite-element stress analysis to reduce payload weight for high-torque industrial robotic articulated arm joints.",
+    p4_spec: "IP67 environmental sealing",
+    p4_tags: "INDUSTRIAL DESIGN / SLA PRINTING",
+    p4_date: "JUNE 2024",
+    p4_title: "Autonomous Vehicle LiDAR Sensor Box",
+    p4_desc: "Precision SLA resin casting of ruggedized autonomous vehicle LiDAR enclosure with integrated active cooling channels and weatherproofing.",
+    p5_spec: "±0.05 mm articulated joint tolerance",
+    p5_tags: "BIOMECHANICS / SLS PRINTING",
+    p5_date: "MAY 2024",
+    p5_title: "Medical Prosthetic Hand Mechanism",
+    p5_desc: "Monolithic functional selective laser sintering (PA12) of anthropomorphic bionic prosthetic hand mechanism with custom anatomical fitting.",
+    p6_spec: "1:1 original form guarantee",
+    p6_tags: "PLASTIC REPRODUCTION / CAD",
+    p6_date: "APRIL 2024",
+    p6_title: "Classic Alfa Romeo Dashboard Panel",
+    p6_desc: "High-resolution photogrammetric and optical scanning of sun-damaged 1968 classic Alfa Romeo dashboard components, followed by CAD mold recreation.",
+    port_empty_title: "No Projects Found",
+    port_empty_desc: "No engineering projects matched the selected category. Try selecting a different filter.",
+    pag_prev: "Previous",
+    pag_next: "Next"
   },
   tr: {
-    nav_home: "Home",
-    nav_portfolio: "Portfolio",
-    nav_services: "Services",
-    nav_news: "News",
-    nav_contact: "Contact",
-    nav_videos: "Videos",
+    nav_home: "Ana Sayfa",
+    nav_portfolio: "Portfolyo",
+    nav_services: "Hizmetler",
+    nav_news: "Haberler",
+    nav_contact: "İletişim",
+    nav_videos: "Videolar",
     btn_get_quote: "Teklif Al",
     
     hero_tol: "TOLERANS ±0.05 MM",
@@ -137,7 +186,54 @@ const translations = {
     footer_desc: "Hassas mühendislik çözümleri, 3D modelleme ve teknolojik prototiplemede lider ortağınız. Sınırları aşan doğruluk.",
     footer_copy: "© 2024 FIXRAL Industrial Engineering Studio. Tüm hakları saklıdır.",
     read_more: "Devamını Oku",
-    explore_details: "Detayları İncele"
+    explore_details: "Detayları İncele",
+
+    /* Portfolio Page Specific Keys */
+    breadcrumb_home: "Ana Sayfa",
+    breadcrumb_portfolio: "Portfolyo",
+    port_hero_title: "Öne Çıkan Projelerimiz",
+    port_hero_desc: "Hassas mühendislik, dijital optimizasyon ve üst düzey üretim teknolojileriyle tamamladığımız endüstriyel başarı hikayeleri.",
+    filter_all: "Tümü",
+    filter_3d_scan: "3D Tarama",
+    filter_cad: "CAD Modelleme",
+    filter_3d_print: "3D Baskı",
+    filter_restoration: "Restorasyon",
+    filter_digital: "Dijital Çözümler",
+    filter_automotive: "Otomotiv",
+    p1_spec: "±0.08 mm sapma toleransı",
+    p1_tags: "ARAÇ RESTORASYONU / 3D TARAMA",
+    p1_date: "EYLÜL 2024",
+    p1_title: "Klasik Porsche Gövde Restorasyonu",
+    p1_desc: "Rüzgar tüneli doğrulaması için nadir 1974 Porsche 911 şasisinin milimetrik optik taraması ve aerodinamik yüzey modellemesi.",
+    p2_spec: "20 mikron SLS katman hassasiyeti",
+    p2_tags: "TERSİNE MÜHENDİSLİK / SLS BASKI",
+    p2_date: "AĞUSTOS 2024",
+    p2_title: "Hassas Havacılık Türbin Kanadı",
+    p2_desc: "Gaz türbini kanadı geometrisinin mikro aşınma payı analizi, aerodinamik yapısal optimizasyon ve uçuş standardında SLS 3D eklemeli imalat.",
+    p3_spec: "STL format onaylı doğrulama",
+    p3_tags: "CAD TASARIM / SLA PROTOTİP",
+    p3_date: "TEMMUZ 2024",
+    p3_title: "Robotik Kol Eklem Prototipi",
+    p3_desc: "Yüksek torklu endüstriyel robotik mafsallı kol eklemlerinde yük ağırlığını azaltmak için topoloji optimizasyonu ve sonlu elemanlar gerilim analizi.",
+    p4_spec: "IP67 çevresel sızdırmazlık",
+    p4_tags: "ENDÜSTRİYEL TASARIM / SLA BASKI",
+    p4_date: "HAZİRAN 2024",
+    p4_title: "Otonom Araç LiDAR Sensör Kutusu",
+    p4_desc: "Entegre aktif soğutma kanallarına ve hava koşullarına dayanıklılığa sahip dayanıklı otonom araç LiDAR muhafazasının hassas SLA reçine dökümü.",
+    p5_spec: "±0.05 mm mafsal eklem toleransı",
+    p5_tags: "BİYOMEKANİK / SLS BASKI",
+    p5_date: "MAYIS 2024",
+    p5_title: "Tıbbi Protez El Mekanizması",
+    p5_desc: "Özel anatomik uyuma sahip antropomorfik biyonik protez el mekanizmasının monolitik fonksiyonel seçici lazer sinterlemesi (PA12).",
+    p6_spec: "1:1 orijinal form garantisi",
+    p6_tags: "PLASTİK REPRODÜKSİYON / CAD",
+    p6_date: "NİSAN 2024",
+    p6_title: "Klasik Alfa Romeo Gösterge Paneli",
+    p6_desc: "Güneşten hasar görmüş 1968 klasik Alfa Romeo gösterge paneli bileşenlerinin yüksek çözünürlüklü fotogrametrik ve optik taraması ve ardından CAD kalıp yeniden üretimi.",
+    port_empty_title: "Proje Bulunamadı",
+    port_empty_desc: "Seçilen kategoriyle eşleşen mühendislik projesi bulunamadı. Farklı bir filtre deneyin.",
+    pag_prev: "Önceki",
+    pag_next: "Sonraki"
   }
 };
 
@@ -281,3 +377,130 @@ function initMobileMenu() {
     }
   });
 }
+
+/* --------------------------------------------------------------------------
+   6. Interactive Portfolio Category Filtering & HUD Status Counter
+   -------------------------------------------------------------------------- */
+function initPortfolioFiltering() {
+  const filterChips = document.querySelectorAll('.portfolio-filter-chips .filter-chip');
+  const projectCards = document.querySelectorAll('.portfolio-item-card');
+  const counterEl = document.getElementById('portfolioCount');
+  const emptyState = document.getElementById('portfolioEmptyState');
+
+  if (!filterChips.length || !projectCards.length) return;
+
+  filterChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      // Update chip active state & accessibility
+      filterChips.forEach(c => {
+        c.classList.remove('active');
+        c.setAttribute('aria-selected', 'false');
+      });
+      chip.classList.add('active');
+      chip.setAttribute('aria-selected', 'true');
+
+      const filterValue = chip.getAttribute('data-filter');
+      let visibleCount = 0;
+
+      projectCards.forEach(card => {
+        const categories = (card.getAttribute('data-category') || '').split(' ');
+        const matches = (filterValue === 'all' || categories.includes(filterValue));
+
+        if (matches) {
+          card.style.display = 'flex';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(8px)';
+          setTimeout(() => {
+            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 30);
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Update live HUD counter
+      if (counterEl) {
+        counterEl.textContent = visibleCount;
+      }
+
+      // Toggle empty state if no matches
+      if (emptyState) {
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   7. Interactive Portfolio Pagination Controls
+   -------------------------------------------------------------------------- */
+function initPortfolioPagination() {
+  const pageBtns = document.querySelectorAll('.portfolio-pagination-bar .page-num-btn');
+  const prevBtn = document.getElementById('prevPageBtn');
+  const nextBtn = document.getElementById('nextPageBtn');
+  const gridSection = document.querySelector('.portfolio-filter-section');
+
+  if (!pageBtns.length) return;
+
+  let currentPage = 1;
+  const totalPages = pageBtns.length;
+
+  const updatePaginationUI = (newPage) => {
+    currentPage = newPage;
+    pageBtns.forEach(btn => {
+      const pageNum = parseInt(btn.getAttribute('data-page'), 10);
+      btn.classList.toggle('active', pageNum === currentPage);
+    });
+
+    if (prevBtn) {
+      prevBtn.disabled = (currentPage === 1);
+      prevBtn.classList.toggle('disabled', currentPage === 1);
+    }
+
+    if (nextBtn) {
+      nextBtn.disabled = (currentPage === totalPages);
+      nextBtn.classList.toggle('disabled', currentPage === totalPages);
+    }
+
+    // Scroll to top of portfolio grid with header offset
+    if (gridSection) {
+      const headerOffset = 88;
+      const elementPosition = gridSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  pageBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pageNum = parseInt(btn.getAttribute('data-page'), 10);
+      if (pageNum !== currentPage) {
+        updatePaginationUI(pageNum);
+      }
+    });
+  });
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        updatePaginationUI(currentPage - 1);
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      if (currentPage < totalPages) {
+        updatePaginationUI(currentPage + 1);
+      }
+    });
+  }
+}
+
