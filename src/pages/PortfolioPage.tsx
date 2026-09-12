@@ -4,105 +4,9 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import QuoteModal from '../components/QuoteModal';
 
-interface Project {
-  id: string;
-  category: string;
-  categories: string[];
-  title: string;
-  tags: string;
-  date: string;
-  spec: string;
-  desc: string;
-  techHud: string;
-  image: string;
-}
+import { ALL_PROJECTS } from '../data/projectsData';
 
-const PROJECTS: Project[] = [
-  {
-    id: 'project-porsche',
-    category: 'restoration 3d-scan automotive',
-    categories: ['restoration', '3d-scan', 'automotive'],
-    title: 'Classic Porsche Body Restoration',
-    tags: 'VEHICLE RESTORATION / 3D SCANNING',
-    date: 'SEPTEMBER 2026',
-    spec: '±0.08 mm deviation tolerance',
-    desc: 'Millimetric optical scanning and aerodynamic surface re-modeling of a rare 1974 Porsche 911 chassis for wind tunnel validation.',
-    techHud: '[ SYS_OPTICAL_SCAN_ACTIVE ]',
-    image: '/assets/images/portfolio/portfolio-phone-1-porsche.png'
-  },
-  {
-    id: 'project-turbine',
-    category: 'cad 3d-print',
-    categories: ['cad', '3d-print'],
-    title: 'Precision Aerospace Turbine Blade',
-    tags: 'REVERSE ENGINEERING / SLS PRINTING',
-    date: 'AUGUST 2026',
-    spec: '20 micron SLS layer precision',
-    desc: 'Micro-wear margin analysis of gas turbine blade geometry, aero-dynamic structural optimization, and flight-grade SLS 3D additive manufacturing.',
-    techHud: '[ SYS_REV_ENG_TURBINE ]',
-    image: '/assets/images/portfolio/portfolio-phone-2-turbine.png'
-  },
-  {
-    id: 'project-robotic-arm',
-    category: 'cad 3d-print digital',
-    categories: ['cad', '3d-print', 'digital'],
-    title: 'Robotic Arm Joint Prototype',
-    tags: 'CAD DESIGN / SLA PROTOTYPING',
-    date: 'JULY 2026',
-    spec: 'STL format certified validation',
-    desc: 'Topology optimization and finite-element stress analysis to reduce payload weight for high-torque industrial robotic articulated arm joints.',
-    techHud: '[ CAD_PARAMETRIC_OPTIMIZED ]',
-    image: '/assets/images/portfolio/portfolio-phone-3-robot.png'
-  },
-  {
-    id: 'project-pump-impeller',
-    category: 'cad 3d-scan',
-    categories: ['cad', '3d-scan'],
-    title: 'Industrial Pump Impeller Renewal',
-    tags: 'REVERSE ENGINEERING / CMM ANALYSIS',
-    date: 'JUNE 2026',
-    spec: 'Original CAD matching allowance',
-    desc: 'Micron-tolerance digital twin generated via CMM probe and 3D optical scanning for wear-resistant renewal manufacturing.',
-    techHud: '[ CMM_ANALYSIS_VERIFIED ]',
-    image: '/assets/images/portfolio/portfolio-phone-4-impeller.png'
-  },
-  {
-    id: 'project-lidar',
-    category: 'cad 3d-print automotive',
-    categories: ['cad', '3d-print', 'automotive'],
-    title: 'Autonomous Vehicle LiDAR Sensor Box',
-    tags: 'INDUSTRIAL DESIGN / SLA PRINTING',
-    date: 'JUNE 2026',
-    spec: 'IP67 environmental sealing',
-    desc: 'Precision SLA resin casting of ruggedized autonomous vehicle LiDAR enclosure with integrated active cooling channels and weatherproofing.',
-    techHud: '[ SLA_TRANS_RESIN_V3 ]',
-    image: '/assets/images/portfolio/portfolio-lidar.png'
-  },
-  {
-    id: 'project-prosthetic',
-    category: 'cad 3d-print digital',
-    categories: ['cad', '3d-print', 'digital'],
-    title: 'Medical Prosthetic Hand Mechanism',
-    tags: 'BIOMECHANICS / SLS PRINTING',
-    date: 'MAY 2026',
-    spec: '±0.05 mm articulated joint tolerance',
-    desc: 'Monolithic functional selective laser sintering (PA12) of anthropomorphic bionic prosthetic hand mechanism with custom anatomical fitting.',
-    techHud: '[ BIO_PA12_SINTERED ]',
-    image: '/assets/images/portfolio/portfolio-prosthetic-hand.png'
-  },
-  {
-    id: 'project-alfa',
-    category: 'restoration 3d-scan cad automotive',
-    categories: ['restoration', '3d-scan', 'cad', 'automotive'],
-    title: 'Classic Alfa Romeo Dashboard Panel',
-    tags: 'PLASTIC REPRODUCTION / CAD',
-    date: 'APRIL 2026',
-    spec: '1:1 original form guarantee',
-    desc: 'High-resolution photogrammetric and optical scanning of sun-damaged 1968 classic Alfa Romeo dashboard components, followed by CAD mold recreation.',
-    techHud: '[ REPRO_MOLD_SUCCESS ]',
-    image: '/assets/images/portfolio/portfolio-alfa-romeo.png'
-  }
-];
+const PROJECTS = ALL_PROJECTS;
 
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -247,7 +151,12 @@ export default function PortfolioPage() {
             ) : (
               <div className="portfolio-projects-grid" id="portfolioProjectsGrid">
                 {filteredProjects.map((project) => (
-                  <article className="portfolio-item-card" key={project.id} id={project.id}>
+                  <Link
+                    to={`/project/${project.id}`}
+                    className="portfolio-item-card"
+                    key={project.id}
+                    id={project.id}
+                  >
                     <div className="portfolio-card-media">
                       <img src={project.image} alt={project.title} loading="lazy" />
                       <div className="portfolio-spec-overlay">
@@ -266,9 +175,12 @@ export default function PortfolioPage() {
                       <p className="portfolio-card-desc">{project.desc}</p>
                       <div className="portfolio-card-footer">
                         <span className="card-tech-hud">{project.techHud}</span>
+                        <span className="card-detail-link">
+                          Explore Project <span className="arrow">→</span>
+                        </span>
                       </div>
                     </div>
-                  </article>
+                  </Link>
                 ))}
               </div>
             )}

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import PortfolioPage from './pages/PortfolioPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -20,6 +21,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/project-detail" element={<ProjectDetailPage />} />
+        <Route path="/project/:id" element={<ProjectDetailPage />} />
       </Routes>
     </BrowserRouter>
   );

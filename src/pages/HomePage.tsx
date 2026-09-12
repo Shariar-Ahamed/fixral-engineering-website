@@ -406,34 +406,34 @@ export default function HomePage() {
 
             <div className="portfolio-grid">
               {/* Project 1: Porsche */}
-              <div className="portfolio-card">
+              <Link to="/project/project-porsche" className="portfolio-card">
                 <div className="portfolio-img-wrap">
                   <img src="/assets/images/frame-1.png" alt="Classic Porsche Body 3D Scanning" width="406" height="320" />
                   <div className="portfolio-hud-badge">±0.05 mm deviation tolerance</div>
                 </div>
                 <div className="portfolio-meta-tag">VEHICLE RESTORATION / 3D SCANNING</div>
                 <h3 className="portfolio-title">Classic Porsche Body Restoration</h3>
-              </div>
+              </Link>
 
               {/* Project 2: Turbine Blade */}
-              <div className="portfolio-card">
+              <Link to="/project/project-turbine" className="portfolio-card">
                 <div className="portfolio-img-wrap">
                   <img src="/assets/images/frame-2.png" alt="Aerospace Turbine Blade SLS" width="405" height="320" />
                   <div className="portfolio-hud-badge">20 micron SLS layer precision</div>
                 </div>
                 <div className="portfolio-meta-tag">REVERSE ENGINEERING / SLS PRINTING</div>
                 <h3 className="portfolio-title">Precision Aerospace Turbine Blade</h3>
-              </div>
+              </Link>
 
               {/* Project 3: Robotic Arm Joint */}
-              <div className="portfolio-card">
+              <Link to="/project/project-robotic-arm" className="portfolio-card">
                 <div className="portfolio-img-wrap">
                   <img src="/assets/images/frame-3.png" alt="Robotic Arm Joint Prototype" width="624" height="320" />
                   <div className="portfolio-hud-badge">STL export &amp; CMM verified</div>
                 </div>
                 <div className="portfolio-meta-tag">CAD DESIGN / SLA PROTOTYPING</div>
                 <h3 className="portfolio-title">Robotic Arm Joint Prototype</h3>
-              </div>
+              </Link>
             </div>
           </div>
         </section>
