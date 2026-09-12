@@ -2582,11 +2582,12 @@ button {
    Matching Figma design/tablet/portfolio/ (768px spec)
    ========================================================================== */
 @media (min-width: 601px) and (max-width: 1024px) {
-  /* Global / Container */
+  /* Global / Container - Fluid Responsive on all tablets (768px - 1024px) */
   .portfolio-page .container {
-    padding-left: 40px !important;
-    padding-right: 40px !important;
-    max-width: 768px !important;
+    padding-left: clamp(24px, 4vw, 40px) !important;
+    padding-right: clamp(24px, 4vw, 40px) !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   /* 1. Header (nav-bar-tablet.svg, 768x80) */
@@ -2597,7 +2598,9 @@ button {
   .portfolio-page .nav-container,
   .portfolio-page .header-container {
     height: 80px !important;
-    padding: 0 40px !important;
+    padding: 0 clamp(24px, 4vw, 40px) !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
   .portfolio-page .brand-logo img.logo-desktop {
     display: block !important;
@@ -2727,7 +2730,7 @@ button {
     font-size: 14.5px !important;
     line-height: 1.6 !important;
     color: #8E9498 !important;
-    max-width: 688px !important;
+    max-width: 860px !important;
     margin-bottom: 0 !important;
   }
 
@@ -2737,7 +2740,7 @@ button {
     border-bottom: none !important;
   }
   .filter-container {
-    padding: 0 40px !important;
+    padding: 0 clamp(24px, 4vw, 40px) !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-start !important;
@@ -2778,15 +2781,15 @@ button {
     display: none !important;
   }
 
-  /* 4. Portfolio Grid & Cards */
+  /* 4. Portfolio Grid & Cards - 2 Columns on Tablet */
   .portfolio-page .portfolio-grid-section {
-    padding: 20px 0 44px !important;
+    padding: 24px 0 48px !important;
     position: relative !important;
   }
   .portfolio-page .portfolio-projects-grid {
     display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px 24px !important;
     width: 100% !important;
     margin: 0 !important;
   }
@@ -2802,12 +2805,14 @@ button {
   }
   .portfolio-page .portfolio-card-media {
     width: 100% !important;
-    height: 240px !important;
+    aspect-ratio: 16 / 10 !important;
+    height: auto !important;
+    min-height: 200px !important;
+    max-height: 265px !important;
     border-radius: 6px !important;
     overflow: hidden !important;
     position: relative !important;
     border: 1px solid #232629 !important;
-    aspect-ratio: auto !important;
   }
   .portfolio-page .portfolio-card-media img {
     width: 100% !important;
@@ -2816,10 +2821,10 @@ button {
   }
   .portfolio-page .portfolio-spec-overlay {
     position: absolute !important;
-    left: 14px !important;
-    right: 14px !important;
-    bottom: 12px !important;
-    inset: auto 14px 12px 14px !important;
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 10px !important;
+    inset: auto 12px 10px 12px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -2840,18 +2845,18 @@ button {
     -webkit-backdrop-filter: none !important;
     padding: 0 !important;
     font-family: var(--font-mono) !important;
-    font-size: 11.5px !important;
+    font-size: 10.5px !important;
     color: #E5E7EB !important;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9) !important;
     letter-spacing: 0.3px !important;
   }
   .portfolio-page .portfolio-hud-corner-tick {
     color: #FF5200 !important;
-    font-size: 15px !important;
+    font-size: 14px !important;
     font-weight: 700 !important;
   }
   .portfolio-page .portfolio-card-body {
-    padding: 14px 0 0 !important;
+    padding: 12px 0 0 !important;
     display: flex !important;
     flex-direction: column !important;
   }
@@ -2861,7 +2866,7 @@ button {
   .portfolio-page .portfolio-category-tags {
     color: #FF5200 !important;
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 600;
     letter-spacing: 0.6px;
   }
@@ -2872,10 +2877,10 @@ button {
   }
   .portfolio-page .portfolio-card-title {
     font-family: var(--font-sans) !important;
-    font-size: 20px !important;
+    font-size: 18px !important;
     font-weight: 600 !important;
     color: #FFFFFF !important;
-    line-height: 1.3 !important;
+    line-height: 1.35 !important;
     margin-bottom: 0 !important;
   }
 
@@ -2979,7 +2984,7 @@ button {
     padding: 60px 0 68px !important;
   }
   .portfolio-cta-banner .cta-container {
-    padding: 0 40px !important;
+    padding: 0 clamp(24px, 4vw, 40px) !important;
   }
   .portfolio-cta-banner .cta-title {
     font-family: var(--font-editorial), 'Times New Roman', serif !important;
